@@ -5,6 +5,8 @@ description: Home Page
 hide: true
 ---
 
+Dylan Cheadle :D
+
 My journey starts here. Ooga booga. Silly little bit of coding and tomfoolery. 
 ### markdown samples
 using markdown from index.md, we are learning markdown.
