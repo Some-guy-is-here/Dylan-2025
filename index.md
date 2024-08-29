@@ -5,9 +5,9 @@ description: Home Page
 hide: true
 ---
 
-Dylan Cheadle :D
 
-My journey starts here. Ooga booga. Silly little bit of coding and tomfoolery. 
+
+My journey starts here. Ooga booga. Silly little bit of coding and tomfoolery. Dylan Cheadle
 ### markdown samples
 using markdown from index.md, we are learning markdown.
 
