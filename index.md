@@ -190,6 +190,40 @@ hide: true
 
 </script>
 
+## Investing in Your Technical Future
+
+Computer Science is the Wild Card for all Majors and Careers.
+
+> Explore the Computer Science Pathway at Del Norte High School and invest in your technical skills.
+
+<div style="display: flex; align-items: flex-start;">
+
+<table>
+<tr>
+  <td>
+    <div style="flex: 65%; text-align: left;">
+      <p>All Del Norte CompSci classes are designed to provide real-world development experiences.</p>
+      <ul>
+        <li> Project talks between teachers and students</li>
+        <li> Teaching through Tech talks (versus lectures) </li>
+        <li> Peer collaboration using GitHub Issues and Kanban boards </li>
+        <li> Critical thinking while performing iterative coding </li>
+        <li> Creativity and designs in projects, as well as code </li>
+      </ul>
+    </div>
+  </td>
+  <td>
+    <div style="flex: 35%; text-align: center;">
+      <img src="{{site.baseurl}}/images/course-brag/qr.png" alt="QR Code" style="width: 100%; max-width: 300px; height: auto; margin-left: 10px;">
+    </div>
+  </td>
+</tr>
+</table>
+
+</div>
+
+</script>
+
 
 My journey starts here. Ooga booga. Silly little bit of coding and tomfoolery. Dylan Cheadle
 ### markdown samples
