@@ -1,8 +1,8 @@
 // To build GameLevels, each contains GameObjects from below imports
 import GameEnv from './GameEnv.js';
 import Background from './Background.js';
-import PlayerOne from './PlayerOne.js';
-import PlayerTwo from './PlayerTwo.js';
+import PlayerFish from './PlayerFish.js';
+import PlayerTurtle from './PlayerTurtle.js';
 import NPC from './NPC.js';
 //import Goomba from './EnemyGoomba.js';
 //import Coin from './Coin.js';
@@ -25,7 +25,7 @@ class GameLevelWater {
         pixels: {height: 580, width: 1038}
     };
 
-    // Player 1 sprite data (turtle)
+    // Turtle sprite data
     const TURTLE_SCALE_FACTOR = 10;
     const sprite_src_turtle = path + "/images/rpg/turtle.png";
     const sprite_data_turtle = {
@@ -43,7 +43,7 @@ class GameLevelWater {
         up: {row: 3, start: 0, columns: 3 },
     };
 
-    // Player 2 sprite data (fish)
+    // Fish sprite data
     const sprite_src_fish = path + "/images/rpg/fishies.png";
     const sprite_data_fish = {
         name: 'fish',
@@ -60,28 +60,32 @@ class GameLevelWater {
         up: {row: 3, start: 0, columns: 3 },    // 4th row
     };
 
-    // NPC sprite data (frog)
-    const sprite_src_frog = path + "/images/rpg/fishies.png";
-    const sprite_data_frog = {
+    // NPC sprite data
+    const sprite_src_npc = path + "/images/rpg/fishies.png";
+    const sprite_data_npc = {
         name: 'npc',
-        src: sprite_src_frog,
+        src: sprite_src_npc,
         SCALE_FACTOR: 16,  // Adjust this based on your scaling needs
+        STEP_FACTOR: 400,
         ANIMATION_RATE: 50,
         pixels: {height: 256, width: 384},
         INIT_POSITION: { x: (width / 2), y: (height / 2)},
         orientation: {rows: 8, columns: 12 },
-        down: {row: 0, start: 9, columns: 3 },  // This is the stationary npc, down is default 
+        down: {row: 0, start: 9, columns: 3 },  // This is the idle animation
+        left: {row: 1, start: 9, columns: 3 },  
+        right: {row: 2, start: 9, columns: 3 }, 
+        up: {row: 3, start: 9, columns: 3 },    
     };
 
-    // List of objects defnitions for this level
     this.objects = [
       { class: Background, data: image_data_water },
-      { class: PlayerOne, data: sprite_data_turtle },
-      { class: PlayerTwo, data: sprite_data_fish },
-      { class: NPC, data: sprite_data_frog }
+      { class: PlayerTurtle, data: sprite_data_turtle },
+      { class: PlayerFish, data: sprite_data_fish },
+      { class: NPC, data: sprite_data_npc }
     ];
   }
 
+  // Add any methods to manipulate the game level data here
 }
 
 export default GameLevelWater;
