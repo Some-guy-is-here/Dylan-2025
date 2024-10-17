@@ -1,7 +1,7 @@
-title: Dylan's page! 
+title: Nighthawk Pages 
 description: "Class of 2025"
-owner_name: Dylan Cheadle :D
-github_username: Some-guy-is-here
+owner_name: John Mortensen
+github_username: nighthawkcoders
 github_repo: "Dylan-2025" 
 baseurl: "/Dylan-2025"
 future: true
@@ -22,6 +22,5 @@ plugins:
 header_pages:
   - navigation/blog.md
   - navigation/search.md
-  - navigation/rpg.md
   - navigation/about.md
   - README4YML.md
