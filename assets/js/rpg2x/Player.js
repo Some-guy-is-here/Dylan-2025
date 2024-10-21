@@ -50,7 +50,7 @@ class Player {
         this.scale = { width: GameEnv.innerWidth, height: GameEnv.innerHeight };
         
         // Check if sprite data is provided
-        if (data && data.src) {
+        if (data) {
             this.scaleFactor = data.SCALE_FACTOR || SCALE_FACTOR;
             this.stepFactor = data.STEP_FACTOR || STEP_FACTOR;
             this.animationRate = data.ANIMATION_RATE || ANIMATION_RATE;
@@ -226,7 +226,21 @@ class Player {
         throw new Error('Method "handleKeyUp()" must be implemented');
     }
 
- 
+    /**
+     * Handles key down events to change the player's velocity.
+     * 
+     * This method updates the player's velocity based on the key pressed.
+     * 
+     * The keydown event object.
+     * @abstract
+     */
+    checkProximityToNPC() {
+        return "Method 'checkProximityToNPC()' must be implemented";
+    }
+
+    handleResponse(message) {
+        alert(message);
+    }
 }
 
 export default Player;
