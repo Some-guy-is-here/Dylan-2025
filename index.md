@@ -190,7 +190,7 @@ hide: true
 </script>
 
 
-My journey starts here. Ooga booga. Silly little bit of coding and tomfoolery. Dylan Cheadle
+My journey starts here. Ooga booga. Silly little bit of coding and tomfoolery. 🤫🧏
 ### markdown samples
 using markdown from index.md, we are learning markdown.
 
