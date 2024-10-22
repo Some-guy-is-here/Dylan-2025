@@ -1,7 +1,7 @@
 ---
 layout: base
-title: Student Home
-permalink: Home
+title: Home
+permalink: /index/
 description: Home Page
 image: /images/mario_animation (1).png
 hide: true
