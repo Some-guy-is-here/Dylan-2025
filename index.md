@@ -1,6 +1,6 @@
 ---
 layout: base
-title: Home
+title: Student Home
 permalink: /index/
 description: Home Page
 image: /images/mario_animation (1).png
