@@ -1,3 +1,10 @@
+---
+layout: base
+title: Home Page
+permalink: /Home/
+---
+
+
 ## Hehehehehehe!
 ### No one shall stop me!!!!!!!!
 But... what shall I do with my newfound power?
