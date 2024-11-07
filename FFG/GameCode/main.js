@@ -1,12 +1,15 @@
 // main.js
 
-// Set up the canvas and other game initialization inside window.onload
 window.onload = function() {
   // Set up the canvas
   const canvas = document.getElementById("gameCanvas");
   const ctx = canvas.getContext("2d");
 
-  // Example game logic (Move and render sprite)
+  // Load the background texture (64x64 image)
+  const backgroundTile = new Image();
+  backgroundTile.src = "FFG/assets/backgroundTile.png";  // Path to your 64x64 px tile texture
+
+  // Load the sprite sheet
   const spriteSheet = new Image();
   spriteSheet.src = "FFG/assets/Nishtalidle.png";  // Adjust path to your sprite sheet
 
@@ -23,29 +26,50 @@ window.onload = function() {
     down: false
   };
 
-  // Load the sprite sheet and start the game loop when it's ready
+  // Load the sprite sheet and start the game loop after it's ready
   spriteSheet.onload = function() {
-    // Start the game loop after the sprite sheet is loaded
     requestAnimationFrame(gameLoop);
   };
 
   // Main game loop
   function gameLoop() {
+    // Clear the canvas and redraw everything
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    
+    // Draw the repeating background
+    drawBackground();
+    
     // Update sprite position based on WASD keys
     if (keyState.left) x -= spriteSpeed;
     if (keyState.right) x += spriteSpeed;
     if (keyState.up) y -= spriteSpeed;
     if (keyState.down) y += spriteSpeed;
 
-    // Clear the canvas and redraw the empty map and sprite
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    // Draw the sprite on the canvas
     drawSprite(x, y);
 
     // Keep the game loop running
     requestAnimationFrame(gameLoop);
   }
 
-  // Draw the sprite on the canvas
+  // Function to draw the repeating background
+  function drawBackground() {
+    const tileWidth = 64;
+    const tileHeight = 64;
+
+    // Calculate how many tiles we need horizontally and vertically
+    const numTilesX = Math.ceil(canvas.width / tileWidth);
+    const numTilesY = Math.ceil(canvas.height / tileHeight);
+
+    // Draw the tiles across the screen
+    for (let i = 0; i < numTilesX; i++) {
+      for (let j = 0; j < numTilesY; j++) {
+        ctx.drawImage(backgroundTile, i * tileWidth, j * tileHeight, tileWidth, tileHeight);
+      }
+    }
+  }
+
+  // Function to draw the sprite on the canvas
   function drawSprite(x, y) {
     const frameX = 0; // Assuming drawing the first frame from the sprite sheet
     ctx.drawImage(spriteSheet, frameX, 0, frameWidth, frameHeight, x, y, frameWidth, frameHeight);
