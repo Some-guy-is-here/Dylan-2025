@@ -9,7 +9,7 @@ const gridHeight = 10; // Number of rows in the map
 
 // Set up the sprite sheet (replace with your own sprite sheet URL or path)
 const spriteSheet = new Image();
-spriteSheet.src = "assets/spriteSheet.png"; // Update the path to your sprite sheet
+spriteSheet.src = "FFG/GameCode/assets.Nishtalidle.png"; // Update the path to your sprite sheet
 
 const frameWidth = 64; // Width of a single frame in the sprite sheet
 const frameHeight = 64; // Height of a single frame
