@@ -6,7 +6,7 @@ const ctx = canvas.getContext("2d");
 
 // Example game logic (Move and render sprite)
 const spriteSheet = new Image();
-spriteSheet.src = "FFG/assets.Nishtalidle.png";  // Adjust path to your sprite sheet
+spriteSheet.src = "FFG/assets/Nishtalidle.png";  // Adjust path to your sprite sheet
 
 const frameWidth = 64;  // Width of one frame in the sprite sheet
 const frameHeight = 64; // Height of one frame
