@@ -7,11 +7,11 @@ window.onload = function() {
 
   // Load the background texture (64x64 image)
   const backgroundTile = new Image();
-  backgroundTile.src = "FFG/assets/backgroundTile.png";  // Path to your 64x64 px tile texture
+  backgroundTile.src = "../assets/backgroundTile.png";  // Path to your 64x64 px tile texture
 
   // Load the sprite sheet
   const spriteSheet = new Image();
-  spriteSheet.src = "FFG/assets/Nishtalidle.png";  // Adjust path to your sprite sheet
+  spriteSheet.src = "../assets/Nishtalidle.png";  // Adjust path to your sprite sheet
 
   const frameWidth = 64;  // Width of one frame in the sprite sheet
   const frameHeight = 64; // Height of one frame
