@@ -82,7 +82,7 @@ window.onload = function() {
     
     sWidth = 64;
     sHeight = 64;
-    spriteFrame = Math.floor(frameCounter / 12.5)%63;
+    spriteFrame = Math.floor(frameCounter / 10)%63;
     frameX = spriteFrame * 64
     //  s=source, d=destination
     //  NishtalIdle.png (source) is 8000x320 = 5*(1600x64) = 5*[(25*64)x64]
