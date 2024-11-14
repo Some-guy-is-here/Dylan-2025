@@ -28,6 +28,7 @@ window.onload = function() {
     up: false,
     down: false
   };
+  let facingRight = true
 
   // Load the sprite sheet and start the game loop after it's ready
   spriteSheet.onload = function() {
@@ -121,4 +122,14 @@ window.onload = function() {
       keyState.down = false;
     }
   });
+  window.addEventListener("keyup", (e) => {
+    if (e.key === "a" || e.key=== "ArrowLeft" ) {
+      let facingRight = false
+    }
+    window.addEventListener("keyup", (e) => {
+      if (e.key === "d" || e.key=== "ArrowRight" ) {
+      let facingRight = true
+    }
 };
+
+      
