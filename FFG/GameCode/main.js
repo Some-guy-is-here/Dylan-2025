@@ -14,7 +14,7 @@ window.onload = function() {
   
   // Load the sprite sheet
   const spriteSheet = new Image();
-  spriteSheet.src = "FFG/assets/Nishtalidle.png";  // Adjust path to your sprite sheet
+  spriteSheet.src = "FFG/assets/NishtalIdle.png";  // Adjust path to your sprite sheet
 
   const frameWidth = 64;  // Width of one frame in the sprite sheet
   const frameHeight = 64; // Height of one frame
@@ -47,8 +47,8 @@ window.onload = function() {
     if (keyState.right) x += spriteSpeed;
     if (keyState.up) y -= spriteSpeed;
     if (keyState.down) y += spriteSpeed;
-    x = Math.min(x, 640-frameWidth)
-    y = Math.min(y, 640-frameHeight)
+    x = Math.min(x, 64-frameWidth)
+    y = Math.min(y, 64-frameHeight)
     x = Math.max(x, 0)
     y = Math.max(y, 0)
 
@@ -80,12 +80,12 @@ window.onload = function() {
   // Function to draw the sprite on the canvas
   function drawSprite(x, y) {
     
-    sWidth = 320;
-    sHeight = 320;
+    sWidth = 64;
+    sHeight = 64;
     spriteFrame = Math.floor(frameCounter / 50)%25;
-    frameX = spriteFrame * 320
+    frameX = spriteFrame * 64
     //  s=source, d=destination
-    //  Nishtalidle.png (source) is 8000x320 = 5*(1600x64) = 5*[(25*64)x64]
+    //  NishtalIdle.png (source) is 8000x320 = 5*(1600x64) = 5*[(25*64)x64]
     //  drawImage(  image,        sx, sy,   sWidth,      sHeight, dx,dy,  dWidth   ,   dHeight  )
     ctx.drawImage(spriteSheet, frameX, 0, sWidth, sHeight, x, y, frameWidth, frameHeight);
   }
