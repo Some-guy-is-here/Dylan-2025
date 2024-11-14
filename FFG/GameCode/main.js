@@ -47,8 +47,8 @@ window.onload = function() {
     if (keyState.right) x += spriteSpeed;
     if (keyState.up) y -= spriteSpeed;
     if (keyState.down) y += spriteSpeed;
-    x = Math.min(x, 64-frameWidth)
-    y = Math.min(y, 64-frameHeight)
+    x = Math.min(x, 320-frameWidth)
+    y = Math.min(y, 320-frameHeight)
     x = Math.max(x, 0)
     y = Math.max(y, 0)
 
@@ -82,7 +82,7 @@ window.onload = function() {
     
     sWidth = 320;
     sHeight = 320;
-    spriteFrame = Math.floor(frameCounter / 10)%63;
+    spriteFrame = Math.floor(frameCounter / 12.5)%63;
     frameX = spriteFrame * 320
     //  s=source, d=destination
     //  NishtalIdle.png (source) is 8000x320 = 5*(1600x64) = 5*[(25*64)x64]
