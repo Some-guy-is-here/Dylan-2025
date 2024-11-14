@@ -191,6 +191,9 @@ hide: true
 
 
 ## Ooga booga. Silly little bit of coding and tomfoolery. 🤫🧏
+### My game
+[FFG](index.html)
+
 ### markdown samples
 using markdown from index.md, we are learning markdown.
 
