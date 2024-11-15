@@ -96,8 +96,14 @@ window.onload = function() {
     if (e.key === "a" || e.key=== "ArrowLeft" ) {
       keyState.left = true;
     }
+    if (e.key === "a" || e.key=== "ArrowLeft" ) {
+      let facingRight = false
+    }
     if (e.key === "d" || e.key=== "ArrowRight" ) {
       keyState.right = true;
+    }
+    if (e.key === "d" || e.key=== "ArrowRight" ) {
+      let facingRight = true
     }
     if (e.key === "w" || e.key=== "ArrowUp" ) {
       keyState.up = true;
@@ -122,14 +128,8 @@ window.onload = function() {
       keyState.down = false;
     }
   });
-  window.addEventListener("keyup", (e) => {
-    if (e.key === "a" || e.key=== "ArrowLeft" ) {
-      let facingRight = false
-    }
-    window.addEventListener("keyup", (e) => {
-      if (e.key === "d" || e.key=== "ArrowRight" ) {
-      let facingRight = true
-    }
+    
+      
 };
 
       
