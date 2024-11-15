@@ -1,6 +1,6 @@
 // main.js
 
-//frameCounter = 0; // global counter to be incremented every time game loop runs
+frameCounter = 0; // global counter to be incremented every time game loop runs
 
 window.onload = function() {
   // Set up the canvas
@@ -39,7 +39,6 @@ window.onload = function() {
   function gameLoop() {
     // Clear the canvas and redraw everything
     ctx.clearRect(0, 0, canvas.width, canvas.height);
-    frameCounter = 0
     // Draw the repeating background
     drawBackground();
     // Update sprite position based on WASD keys
@@ -47,8 +46,8 @@ window.onload = function() {
     if (keyState.right) x += spriteSpeed;
     if (keyState.up) y -= spriteSpeed;
     if (keyState.down) y += spriteSpeed;
-    x = Math.min(x, 0)
-    y = Math.min(y, 0)
+    x = Math.min(x, 320)
+    y = Math.min(y, 320)
     x = Math.max(x, 0)
     y = Math.max(y, 0)
 
