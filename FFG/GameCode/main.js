@@ -79,8 +79,8 @@ window.onload = function() {
   // Function to draw the sprite on the canvas
   function drawSprite(x, y) {
     
-    sWidth = 320;
-    sHeight = 320;
+    sWidth = 320
+    sHeight = 320
     spriteFrame = Math.floor(frameCounter / 12.5)%63;
     frameX = spriteFrame * 320
     //  s=source, d=destination
