@@ -48,8 +48,8 @@ window.onload = function() {
     if (keyState.right) x += spriteSpeed;
     if (keyState.up) y -= spriteSpeed;
     if (keyState.down) y += spriteSpeed;
-    x = Math.min(x, 64-frameWidth)
-    y = Math.min(y, 64-frameHeight)
+    x = Math.min(x, 0)
+    y = Math.min(y, 0)
     x = Math.max(x, 0)
     y = Math.max(y, 0)
 
