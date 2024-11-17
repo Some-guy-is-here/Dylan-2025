@@ -20,6 +20,7 @@ window.onload = function() {
   const frameHeight = 64; // Height of one frame
   const spriteSpeed = 4;  // Speed of movement
   let x = 100, y = 100;   // Starting position of the sprite
+  const spriteFrames = 63;
 
   // Key state object to track WASD keys
   let keyState = {
@@ -47,8 +48,8 @@ window.onload = function() {
     if (keyState.right) x += spriteSpeed;
     if (keyState.up) y -= spriteSpeed;
     if (keyState.down) y += spriteSpeed;
-    x = Math.min(x, 320)
-    y = Math.min(y, 320)
+    x = Math.min(x, 640-frameWidth)
+    y = Math.min(y, 640-frameHeight)
     x = Math.max(x, 0)
     y = Math.max(y, 0)
 
@@ -72,26 +73,42 @@ window.onload = function() {
     // Draw the tiles across the screen
     for (let i = 0; i < numTilesX; i++) {
       for (let j = 0; j < numTilesY; j++) {
-        //ctx.drawImage(backgroundTile, i * tileWidth, j * tileHeight, tileWidth, tileHeight);
+        ctx.drawImage(backgroundTile, i * tileWidth, j * tileHeight, tileWidth, tileHeight);
       }
     }
   }
 
   // Function to draw the sprite on the canvas
   function drawSprite(x, y) {
-    const frameX = 0; // Assuming drawing the first frame from the sprite sheet
-    ctx.drawImage(spriteSheet, frameX, 0, frameWidth, frameHeight, x, y, frameWidth, frameHeight);
+    sWidth = 320;
+    sHeight = 320;
+    // 63 horizontal frames, each frame is a different instance in time
+    spriteFrame_h = Math.floor(frameCounter / 12.5)%spriteFrames;
+    // 2 vertical frames, 0 is facing right, 1 is facing left
+    spriteFrame_v = 0;
+    
+    // if facing left, choose the lower set of animation frames, and run through them in reverse
+    if(facingRight == false) {
+      spriteFrame_h = spriteFrames - (spriteFrame_h+1)
+      spriteFrame_v = 1
+    }
+    frameX = spriteFrame_h * 320
+    frameY = spriteFrame_v * 320
+    //  s=source, d=destination
+    //  Nishtalidle.png (source) is 8000x320 = 5*(1600x64) = 5*[(spriteFrames*64)x64]
+    //  drawImage(  image,        sx,    sy  , sWidth, sHeight, dx,dy,  dWidth   ,   dHeight  )
+    ctx.drawImage(spriteSheet, frameX, frameY, sWidth, sHeight, x, y, frameWidth, frameHeight);
   }
 
   // Handle keyboard input
   window.addEventListener("keydown", (e) => {
     if (e.key === "a" || e.key=== "ArrowLeft" ) {
       keyState.left = true
-     let facingRight = false
+      facingRight = false
     }
     if (e.key === "d" || e.key=== "ArrowRight" ) {
       keyState.right = true;
-      let facingRight = true
+      facingRight = true
     }
     if (e.key === "w" || e.key=== "ArrowUp" ) {
       keyState.up = true;
