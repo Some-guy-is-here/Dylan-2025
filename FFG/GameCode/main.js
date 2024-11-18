@@ -80,8 +80,8 @@ window.onload = function() {
 
   // Function to draw the sprite on the canvas
   function drawSprite(x, y) {
-    sWidth = 640;
-    sHeight = 640;
+    sWidth = 320;
+    sHeight = 320;
     // 63 horizontal frames, each frame is a different instance in time
     spriteFrame_h = Math.floor(frameCounter / 12.5)%spriteFrames;
     // 2 vertical frames, 0 is facing right, 1 is facing left
