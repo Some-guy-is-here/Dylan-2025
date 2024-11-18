@@ -14,7 +14,7 @@ window.onload = function() {
 
   // Load the sprite sheet
   const spriteSheet = new Image();
-  spriteSheet.src = "FFG/assets/Nishtalidle.png";  // Adjust path to your sprite sheet
+  spriteSheet.src = "FFG/assets/NishtalIdle.png";  // Adjust path to your sprite sheet
 
   const frameWidth = 64;  // Width of one frame in the sprite sheet
   const frameHeight = 64; // Height of one frame
