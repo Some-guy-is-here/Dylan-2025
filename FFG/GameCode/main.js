@@ -15,6 +15,8 @@ window.onload = function() {
   // Load the sprite sheet
   const spriteSheet = new Image();
   spriteSheet.src = "FFG/assets/NishtalIdle.png";  // Adjust path to your sprite sheet
+  const walkingSprite = new Image()
+  walkingSprite.src = "FFG/assets/walking.png"
 
   const frameWidth = 96;  // Width of one frame in the sprite sheet
   const frameHeight = 96; // Height of one frame
@@ -33,9 +35,18 @@ window.onload = function() {
   let walking = false
 
   // Load the sprite sheet and start the game loop after it's ready
-  spriteSheet.onload = function() {
-    requestAnimationFrame(gameLoop);
-  };
+  if(walking == false) {
+    spriteSheet.onload = function() {
+      requestAnimationFrame(gameLoop);
+    };
+  } else {
+    if(walking == true) {
+      walking.onload = function() {
+        requestAnimationFrame(gameLoop);
+      };
+    }
+  }
+    
 
   // Main game loop
   function gameLoop() {
