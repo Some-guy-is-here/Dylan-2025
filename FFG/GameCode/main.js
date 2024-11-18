@@ -23,6 +23,7 @@ window.onload = function() {
   const spriteSpeed = 4;  // Speed of movement
   let x = 100, y = 100;   // Starting position of the sprite
   const spriteFrames = 63;
+  const walkingFrames = 2
 
   // Key state object to track WASD keys
   let keyState = {
@@ -90,7 +91,8 @@ window.onload = function() {
     }
   }
 
-  // Function to draw the sprite on the canvas
+  if(walking == false) {
+    // Function to draw the sprite on the canvas
   function drawSprite(x, y) {
     sWidth = 320;
     sHeight = 320;
@@ -110,6 +112,29 @@ window.onload = function() {
     //  Nishtalidle.png (source) is 8000x320 = 5*(1600x64) = 5*[(spriteFrames*64)x64]
     //  drawImage(  image,        sx,    sy  , sWidth, sHeight, dx,dy,  dWidth   ,   dHeight  )
     ctx.drawImage(spriteSheet, frameX, frameY, sWidth, sHeight, x, y, frameWidth, frameHeight);
+  }
+  } else if(walking == true) {
+    // Function to draw the sprite on the canvas
+  function drawSprite(x, y) {
+    sWidth = 320;
+    sHeight = 320;
+    // 63 horizontal frames, each frame is a different instance in time
+    walkingFrame_h = Math.floor(frameCounter / 12.5)%walkingFrames;
+    // 2 vertical frames, 0 is facing right, 1 is facing left
+    walkingFrame_v = 0;
+    
+    // if facing left, choose the lower set of animation frames, and run through them in reverse
+    if(facingRight == false) {
+      walkingFrame_h = walkingFrames - (walkingFrame_h+1)
+      walkingFrame_v = 1
+    }
+    frameX = walkingFrame_h * 320
+    frameY = walkingFrame_v * 320
+    //  s=source, d=destination
+    //  Nishtalidle.png (source) is 8000x320 = 5*(1600x64) = 5*[(spriteFrames*64)x64]
+    //  drawImage(  image,        sx,    sy  , sWidth, sHeight, dx,dy,  dWidth   ,   dHeight  )
+    ctx.drawImage(spriteSheet, frameX, frameY, sWidth, sHeight, x, y, frameWidth, frameHeight);
+  }
   }
 
   // Handle keyboard input
