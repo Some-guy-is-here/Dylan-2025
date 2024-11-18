@@ -80,8 +80,8 @@ window.onload = function() {
 
   // Function to draw the sprite on the canvas
   function drawSprite(x, y) {
-    sWidth = 320;
-    sHeight = 320;
+    sWidth = 640;
+    sHeight = 640;
     // 63 horizontal frames, each frame is a different instance in time
     spriteFrame_h = Math.floor(frameCounter / 12.5)%spriteFrames;
     // 2 vertical frames, 0 is facing right, 1 is facing left
@@ -92,8 +92,8 @@ window.onload = function() {
       spriteFrame_h = spriteFrames - (spriteFrame_h+1)
       spriteFrame_v = 1
     }
-    frameX = spriteFrame_h * 320
-    frameY = spriteFrame_v * 320
+    frameX = spriteFrame_h * 640
+    frameY = spriteFrame_v * 640
     //  s=source, d=destination
     //  Nishtalidle.png (source) is 8000x320 = 5*(1600x64) = 5*[(spriteFrames*64)x64]
     //  drawImage(  image,        sx,    sy  , sWidth, sHeight, dx,dy,  dWidth   ,   dHeight  )
