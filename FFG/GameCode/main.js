@@ -16,8 +16,8 @@ window.onload = function() {
   const spriteSheet = new Image();
   spriteSheet.src = "FFG/assets/NishtalIdle.png";  // Adjust path to your sprite sheet
 
-  const frameWidth = 128;  // Width of one frame in the sprite sheet
-  const frameHeight = 128; // Height of one frame
+  const frameWidth = 96;  // Width of one frame in the sprite sheet
+  const frameHeight = 96; // Height of one frame
   const spriteSpeed = 4;  // Speed of movement
   let x = 100, y = 100;   // Starting position of the sprite
   const spriteFrames = 63;
