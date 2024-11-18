@@ -136,7 +136,8 @@ window.onload = function() {
     //  drawImage(  image,        sx,    sy  , sWidth, sHeight, dx,dy,  dWidth   ,   dHeight  )
     ctx.drawImage(spriteSheet, frameX, frameY, sWidth, sHeight, x, y, frameWidth, frameHeight);
   }
-  }}
+  }
+}
 
   // Handle keyboard input
   window.addEventListener("keydown", (e) => {
