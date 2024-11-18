@@ -30,6 +30,7 @@ window.onload = function() {
     down: false
   };
   let facingRight = true
+  let walking = false
 
   // Load the sprite sheet and start the game loop after it's ready
   spriteSheet.onload = function() {
@@ -105,16 +106,20 @@ window.onload = function() {
     if (e.key === "a" || e.key=== "ArrowLeft" ) {
       keyState.left = true
       facingRight = false
+      walking = true
     }
     if (e.key === "d" || e.key=== "ArrowRight" ) {
       keyState.right = true;
       facingRight = true
+      walking = true
     }
     if (e.key === "w" || e.key=== "ArrowUp" ) {
       keyState.up = true;
+      walking = true
     }
     if (e.key === "s" || e.key=== "ArrowDown" ) {
       keyState.down = true;
+      walking = true
     }
   });
 
@@ -122,15 +127,19 @@ window.onload = function() {
   window.addEventListener("keyup", (e) => {
     if (e.key === "a" || e.key=== "ArrowLeft" ) {
       keyState.left = false;
+      walking = false
     }
     if (e.key === "d" || e.key=== "ArrowRight" ) {
       keyState.right = false;
+      walking = false
     }
     if (e.key === "w" || e.key=== "ArrowUp" ) {
       keyState.up = false;
+      walking = false
     }
     if (e.key === "s" || e.key=== "ArrowDown" ) {
       keyState.down = false;
+      walking = false
     }
   });
     
