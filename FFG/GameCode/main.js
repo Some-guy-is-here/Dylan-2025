@@ -113,7 +113,8 @@ window.onload = function() {
     //  drawImage(  image,        sx,    sy  , sWidth, sHeight, dx,dy,  dWidth   ,   dHeight  )
     ctx.drawImage(spriteSheet, frameX, frameY, sWidth, sHeight, x, y, frameWidth, frameHeight);
   }
-  } else if(walking == true) {
+  } else {
+    if(walking == true) {
     // Function to draw the sprite on the canvas
   function drawSprite(x, y) {
     sWidth = 320;
@@ -135,7 +136,7 @@ window.onload = function() {
     //  drawImage(  image,        sx,    sy  , sWidth, sHeight, dx,dy,  dWidth   ,   dHeight  )
     ctx.drawImage(spriteSheet, frameX, frameY, sWidth, sHeight, x, y, frameWidth, frameHeight);
   }
-  }
+  }}
 
   // Handle keyboard input
   window.addEventListener("keydown", (e) => {
